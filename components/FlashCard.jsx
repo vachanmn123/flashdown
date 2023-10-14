@@ -21,7 +21,7 @@ export default function FlashCard({ card, color }) {
     >
       {showAnswer ? (
         <h2
-          className="text-3xl"
+          className="text-xl md:text-3xl"
           style={{
             transform: "rotateY(180deg)",
           }}
@@ -34,7 +34,7 @@ export default function FlashCard({ card, color }) {
           </span>
         </h2>
       ) : (
-        <h2 className="text-3xl">
+        <h2 className="text-xl md:text-3xl">
           {card.question}
           <br />
           <span className="text-sm">
