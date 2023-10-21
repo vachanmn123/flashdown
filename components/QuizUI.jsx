@@ -4,6 +4,22 @@ import { useEffect, useState } from "react";
 
 /**
  *
+ * @returns {string} randomColor
+ */
+const randomColor = () => {
+  const colors = [
+    "bg-red-400",
+    "bg-yellow-400",
+    "bg-green-400",
+    "bg-blue-400",
+    "bg-indigo-400",
+    "bg-purple-400",
+    "bg-pink-400",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+/**
+ *
  * @param {{questions: import("@prisma/client").Card[]}} param0
  */
 export default function QuizUI({ questions }) {
@@ -15,6 +31,11 @@ export default function QuizUI({ questions }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
   const [complete, setComplete] = useState(false);
+  const [currColor, setCurrColor] = useState(randomColor());
+
+  useEffect(() => {
+    setCurrColor(randomColor());
+  }, [score]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,8 +90,13 @@ export default function QuizUI({ questions }) {
           {success}
         </div>
       )}
-      <div className="flex flex-col gap-12 justify-center items-center text-center h-[50%] w-[50%]">
-        <div className="flex flex-row rounded-xl h-full w-full bg-red-400 text-white text-3xl font-semibold p-10 text-center justify-center items-center">
+      <div className="flex flex-col gap-12 justify-center items-center text-center h-[75%] w-[50%]">
+        <div
+          className={
+            "flex flex-row rounded-xl h-full w-full text-white text-3xl font-semibold p-10 text-center justify-center items-center " +
+            currColor
+          }
+        >
           {questions[currQuestion].question}
         </div>
         <div>

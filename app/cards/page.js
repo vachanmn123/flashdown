@@ -40,7 +40,7 @@ export default async function () {
         <h1 className="text-5xl font-bold">Your Cards</h1>
         <p className="text-xl px-2 py-1">{user.Cards.length} cards</p>
       </div>
-      <div className="flex items-end justify-end">
+      <div className="flex items-end justify-end my-5">
         <a href="/cards/add" className="justify-end self-end">
           <button className="btn btn-primary justify-end">Add Card</button>
         </a>
