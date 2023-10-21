@@ -15,6 +15,9 @@ export default function NavBar({ session }) {
         <a href="/cards" className=" normal-case mx-3">
           Cards
         </a>
+        <a href="/quiz" className=" normal-case mx-3">
+          Quiz
+        </a>
       </div>
       <div className="flex-none">
         {session ? (
