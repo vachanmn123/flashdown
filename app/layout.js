@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "FlashDown",
   description: "Flash cards, colourful-er",
+  favicon: "/previewImg.png",
 };
 
 export default async function RootLayout({ children }) {
